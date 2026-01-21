@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Chat Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Conversations</h2>
+    <ul id="conversationList">
+      <li class="active">Client A</li>
+      <li>Client B</li>
+      <li>Client C</li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <h1>Client A</h1>
+      <div class="controls">
+        <button id="aiToggle" class="on">AI ON</button>
+        <button>Human Takeover</button>
+      </div>
+    </header>
+
+    <!-- Chat -->
+    <section class="chat">
+      <div class="msg user">Hi, how are you?</div>
+      <div class="msg ai">I'm doing well, just been a bit busy lately.</div>
+    </section>
+
+    <!-- AI Suggestion -->
+    <section class="suggestion">
+      <h3>AI Suggested Reply</h3>
+      <textarea id="aiReply">
+Thanks for checking in. Things have been a bit hectic, but all good.
+      </textarea>
+      <div class="suggestion-meta">
+        Suggested delay: <strong>2–5 hours</strong>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Right Panel -->
+  <aside class="panel">
+    <h2>AI Style</h2>
+
+    <label>
+      Warmth
+      <input type="range" min="0" max="100" value="60" />
+    </label>
+
+    <label>
+      Reply Length
+      <select>
+        <option>Very Short</option>
+        <option selected>Short</option>
+        <option>Medium</option>
+      </select>
+    </label>
+
+    <label>
+      Emoji Usage
+      <select>
+        <option>Disabled</option>
+        <option>Low</option>
+        <option>High</option>
+      </select>
+    </label>
+
+    <label>
+      Initiative
+      <input type="range" min="0" max="100" value="30" />
+    </label>
+
+  </aside>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
