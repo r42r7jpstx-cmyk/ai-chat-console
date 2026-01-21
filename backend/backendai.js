@@ -1,0 +1,26 @@
+import axios from "axios";
+
+export async function aiReply(message, style) {
+  const prompt = `
+You are a WhatsApp assistant.
+Style: ${style}
+Reply shortly and naturally.
+
+User: ${message}
+`;
+
+  const res = await axios.post(
+    "https://api.openai.com/v1/chat/completions",
+    {
+      model: "gpt-4.1-mini",
+      messages: [{ role: "user", content: prompt }]
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+      }
+    }
+  );
+
+  return res.data.choices[0].message.content;
+}
