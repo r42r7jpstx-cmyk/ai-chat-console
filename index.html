@@ -38,16 +38,25 @@
       <div class="msg ai">I'm doing well, just been a bit busy lately.</div>
     </section>
 
-    <!-- AI Suggestion -->
-    <section class="suggestion">
-      <h3>AI Suggested Reply</h3>
-      <textarea id="aiReply">
-Thanks for checking in. Things have been a bit hectic, but all good.
-      </textarea>
-      <div class="suggestion-meta">
-        Suggested delay: <strong>2–5 hours</strong>
-      </div>
-    </section>
+<section class="suggestion">
+  <h3>AI Suggested Reply</h3>
+
+  <!-- AI 草稿区 -->
+  <textarea id="aiReply"
+    placeholder="AI suggested reply will appear here..."
+    style="width:100%;height:80px;"></textarea>
+
+  <!-- 操作按钮 -->
+  <div style="margin-top:8px;display:flex;gap:8px;">
+    <button id="generateBtn">Generate Suggestion</button>
+    <button id="copyBtn">Copy</button>
+  </div>
+
+  <div class="suggestion-meta">
+    Suggested delay: <strong id="delayHint">2–5 hours</strong>
+  </div>
+</section>
+
 
   </main>
 
@@ -90,3 +99,4 @@ Thanks for checking in. Things have been a bit hectic, but all good.
 <script src="app.js"></script>
 </body>
 </html>
+
