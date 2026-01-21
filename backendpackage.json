@@ -1,0 +1,9 @@
+{
+  "name": "whatsapp-ai-agent",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.19.2",
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5"
+  }
+}
