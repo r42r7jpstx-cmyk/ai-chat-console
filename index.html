@@ -32,11 +32,24 @@
       </div>
     </header>
 
-    <!-- Chat -->
-    <section class="chat">
-      <div class="msg user">Hi, how are you?</div>
-      <div class="msg ai">I'm doing well, just been a bit busy lately.</div>
-    </section>
+<section class="chat">
+
+  <!-- 👇 新增：客户输入区 -->
+  <div style="margin-bottom:16px;">
+    <label style="font-size:13px;color:#555;">
+      Client Message (paste here):
+    </label>
+    <textarea id="clientInput"
+      placeholder="Paste the client's latest message here..."
+      style="width:100%;height:60px;"></textarea>
+  </div>
+
+  <!-- 历史展示（只读） -->
+  <div class="msg user">Hi, how are you?</div>
+  <div class="msg ai">I'm doing well, just been a bit busy lately.</div>
+
+</section>
+
 
 <section class="suggestion">
   <h3>AI Suggested Reply</h3>
@@ -99,4 +112,5 @@
 <script src="app.js"></script>
 </body>
 </html>
+
 
