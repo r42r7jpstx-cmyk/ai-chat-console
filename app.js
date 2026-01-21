@@ -129,4 +129,20 @@ if (aiToggle) {
   });
 }
 
+/***********************
+ * 9. Client Input Binding
+ ***********************/
+const clientInput = document.getElementById("clientInput");
+
+if (clientInput) {
+  clientInput.addEventListener("input", () => {
+    conversationContext.last_user_message = clientInput.value;
+
+    // 重新生成 Prompt（调试用）
+    const updatedPrompt = buildPrompt(styleProfile, conversationContext);
+    console.log("UPDATED PROMPT:");
+    console.log(updatedPrompt);
+  });
+}
+
 
