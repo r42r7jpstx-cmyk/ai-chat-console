@@ -110,39 +110,52 @@ const finalPrompt = buildPrompt(styleProfile, conversationContext);
 console.log("===== FINAL PROMPT =====");
 console.log(finalPrompt);
 
-
-const aiToggle = document.getElementById("aiToggle");
-
-if (aiToggle) {
-  aiToggle.addEventListener("click", () => {
-    if (aiToggle.classList.contains("on")) {
-      aiToggle.classList.remove("on");
-      aiToggle.textContent = "AI OFF";
-      aiToggle.style.background = "#e11d48";
-      aiToggle.style.color = "white";
-    } else {
-      aiToggle.classList.add("on");
-      aiToggle.textContent = "AI ON";
-      aiToggle.style.background = "#16a34a";
-      aiToggle.style.color = "white";
-    }
-  });
-}
-
 /***********************
- * 9. Client Input Binding
+ * UI Interaction (FINAL SAFE VERSION)
  ***********************/
-const clientInput = document.getElementById("clientInput");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (clientInput) {
-  clientInput.addEventListener("input", () => {
-    conversationContext.last_user_message = clientInput.value;
+  const aiToggle = document.getElementById("aiToggle");
+  const clientInput = document.getElementById("clientInput");
+  const generateBtn = document.getElementById("generateBtn");
+  const copyBtn = document.getElementById("copyBtn");
+  const aiReplyBox = document.getElementById("aiReply");
 
-    // 重新生成 Prompt（调试用）
-    const updatedPrompt = buildPrompt(styleProfile, conversationContext);
-    console.log("UPDATED PROMPT:");
-    console.log(updatedPrompt);
-  });
-}
+  console.log("clientInput element:", clientInput);
+
+  // AI ON / OFF
+  if (aiToggle) {
+    aiToggle.addEventListener("click", () => {
+      if (aiToggle.classList.contains("on")) {
+        aiToggle.classList.remove("on");
+        aiToggle.textContent = "AI OFF";
+        aiToggle.style.background = "#e11d48";
+        aiToggle.style.color = "white";
+      } else {
+        aiToggle.classList.add("on");
+        aiToggle.textContent = "AI ON";
+        aiToggle.style.background = "#16a34a";
+        aiToggle.style.color = "white";
+      }
+    });
+  }
+
+  // Client input → update prompt
+  if (clientInput) {
+    clientInput.addEventListener("input", () => {
+      conversationContext.last_user_message = clientInput.value;
+
+      const updatedPrompt = buildPrompt(styleProfile, conversationContext);
+      console.log("UPDATED PROMPT:");
+      console.log(updatedPrompt);
+    });
+  }
+
+  // Generate mock AI reply
+  if (generateBtn && aiReplyBox) {
+    generateBtn.addEventListener("click", () => {
+
+
+
 
 
